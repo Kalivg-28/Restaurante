@@ -1,0 +1,392 @@
+.base {
+    background-color: #ededed;
+    font-family: bold;
+    box-shadow: 10px 5px 5px gainsboro;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.nombre {
+    text-align: center;
+    font: oblique bold 120% cursive;
+    margin-bottom: 20px;
+}
+.descripcion {
+    text-align: center;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.precio {
+    margin: 20px;
+    font-family:fantasy;
+}
+
+.tipo {
+    margin: 20px;
+}
+
+.boton {
+    background-color: #0a0a0a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #0a0a0a;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Aumenté el tamaño para mayor visibilidad */
+    color: red; /* Cambia el color de la "X" a rojo */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease; /* Agrega animación */
+}
+
+.closeButton:hover {
+    color: darkred; /* Cambia a un rojo más oscuro al pasar el mouse */
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+.confirmButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.confirmButton:hover {
+    background-color: #45a049;
+}
+
+.ticketButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ticketButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.ticketButton:hover {
+    background-color: #45a049;
+}
+
+.addTicketButton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.newTicketButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.newTicketButton:hover {
+    background-color: #0056b3;
+}
+
+.closeTicketButton {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px; /* Separado del borde inferior */
+    right: 20px; /* Separado del borde derecho */
+    background-color: #d9534f; /* Rojo (Bootstrap danger) */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.closeTicketButton:hover {
+    background-color: #c9302c; /* Rojo más oscuro al pasar el cursor */
+}
+
+.closeTicketButton:active {
+    background-color: #ac2925; /* Rojo aún más oscuro al hacer clic */
+    transform: scale(0.98); /* Pequeña contracción al hacer clic */
+}
+
+/* Botón "Ver Meseros" */
+.viewMeserosButton {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 80px; /* Separación desde el borde inferior */
+    right: 20px; /* Separación desde el borde derecho */
+    background-color: #17a2b8; /* Azul tipo Bootstrap info */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.viewMeserosButton:hover {
+    background-color: #138496; /* Azul más oscuro al pasar el cursor */
+}
+
+.viewMeserosButton:active {
+    background-color: #117a8b; /* Azul aún más oscuro al hacer clic */
+    transform: scale(0.98); /* Contracción leve al hacer clic */
+}
+
+/* Estilos generales para el formulario */
+.formLabel {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.formInput {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.confirmButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.confirmButton:hover {
+    background-color: #45a049;
+}
+
+.meseroList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.meseroListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.deleteButton {
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+    background-color: #c9302c;
+}
+
+.deleteButton:active {
+    background-color: #ac2925;
+    transform: scale(0.98);
+}
+
+.addPlatilloButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+.addPlatilloButton:hover {
+    background-color: #0056b3;
+}
+
+.formLabel {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formInput,
+.formTextarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.formTextarea {
+    height: 80px;
+    resize: none;
+}
+
+.addPlatilloButton {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 140px; /* Separado del borde inferior */
+    right: 20px; /* Separado del borde derecho */
+    background-color: #007bff; /* Azul (Bootstrap primary) */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.addPlatilloButton:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+.addPlatilloButton:active {
+    background-color: #003f7f; /* Azul aún más oscuro al hacer clic */
+    transform: scale(0.98); /* Pequeña contracción al hacer clic */
+}
+
+.formLabel {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formInput,
+.formTextarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.formTextarea {
+    height: 80px;
+    resize: none;
+}
+
+.viewTicketsButton {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 200px; /* Separado del borde inferior */
+    right: 20px; /* Separado del borde derecho */
+    background-color: #4caf50; /* Azul (Bootstrap primary) */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease;
+}
+
+.viewTicketsButton:hover {
+    background-color: #45a049;
+}
+
+/* Scroll para el modal */
+.modalContent {
+    max-height: 80vh; /* Limita la altura del modal */
+    overflow-y: auto; /* Activa el scroll vertical */
+}
+
+.ticketList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ticketListItem {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
